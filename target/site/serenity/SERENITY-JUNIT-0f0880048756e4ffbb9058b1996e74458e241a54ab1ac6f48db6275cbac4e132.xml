@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="HU-001 Calendario Google" skipped="0" tests="3" time="81.9" timestamp="2021-07-13 05:48:16"><testcase name="Crear un evento en el calendario de Google"/><testcase name="modificar un evento en el calendario de Google"/><testcase name="Eliminar un cita en el calendario de Google"/></testsuite>

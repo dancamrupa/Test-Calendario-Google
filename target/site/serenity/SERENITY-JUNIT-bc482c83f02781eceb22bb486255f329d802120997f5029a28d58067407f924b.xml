@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="HU-001 Calendario Google" skipped="0" tests="1" time="32.64" timestamp="2021-07-11 09:33:37"><testcase name="Crear una tarea en el calendario de Google"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+tasks.CrearTarea.performAs(CrearTarea.java:22)&#13;
+stepDefinitions.CalendarioStepDefinitions.creoUnaTareEnElCalendario(CalendarioStepDefinitions.java:46)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase></testsuite>

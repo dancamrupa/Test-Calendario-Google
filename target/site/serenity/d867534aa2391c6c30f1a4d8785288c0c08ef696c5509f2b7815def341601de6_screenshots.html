@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="4c73c4a564332f122177aafd1f35a7eac62c308778ada9e7c6bc98a50c2bd1a1.html">HU-003 Buscador GW</a></span>
+                > <span class="truncate-60"><a
+                    href="d867534aa2391c6c30f1a4d8785288c0c08ef696c5509f2b7815def341601de6.html">Buscar el producto en el buscador de GW </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 08-07-2021 14:09</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">HU-003 Buscador GW </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Yo como usuario de GW<br />
+Quiero buscar en el buscador un producto<br />
+Para ver el producto en la pagina
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon fa-2x' title='ERROR'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="error-color">Buscar el producto en el buscador de GW
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Element not interactable exception: element not interactable</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.ElementNotInteractableException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>tasks.BuscarProductoEnGw.performAs(BuscarProductoEnGw.java:22)<br />stepDefinitions.GWBuscadorBackgroundStepDefinitions.buscoUnProductoEnElBuscador(GWBuscadorBackgroundStepDefinitions.java:38)<br />cucumber.runner.Runner.runPickle(Runner.java:80)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource3026018514609225753.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" Given que me encuentro en la pagina de GW con la url https://www.google.com/" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" When busco un producto en el buscador
+| nombreProducto |
+| CARAMA&Ntilde;OLA PLASTICA L-001L GW SHIMANO |" width="1600"/>
+                <img src="f050df07f3f32890bf0a144150680df7548033c118a29a6037e76d326df70d8d.png" title=" Camilo buscar producto en gw" width="1600"/>
+                <img src="f050df07f3f32890bf0a144150680df7548033c118a29a6037e76d326df70d8d.png" title=" Camilo enters 'CARAMA&Ntilde;OLA PLASTICA L-001L GW SHIMANO' into El campo donde se realiza la busque del producto" width="1600"/>
+                <img src="46d170ef6c3bfd53c69f2dc34953c9faa4f47e26df8e0b3c75caf1415f7e901a.png" title=" Camilo enters 'CARAMA&Ntilde;OLA PLASTICA L-001L GW SHIMANO' into El campo donde se realiza la busque del producto (completed)" width="1600"/>
+                <img src="46d170ef6c3bfd53c69f2dc34953c9faa4f47e26df8e0b3c75caf1415f7e901a.png" title=" Camilo clicks on " width="1600"/>
+                <img src="46d170ef6c3bfd53c69f2dc34953c9faa4f47e26df8e0b3c75caf1415f7e901a.png" title=" Camilo clicks on  (completed)" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" When busco un producto en el buscador
+| nombreProducto |
+| BICICLETA FIXIE GW |" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" Camilo buscar producto en gw" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" Camilo enters 'BICICLETA FIXIE GW' into El campo donde se realiza la busque del producto" width="1600"/>
+                <img src="e1b255a454d73c55507c2ed8fa20e02e2b4f0be7b9396973f5f081a163c482f3.png" title=" Camilo enters 'BICICLETA FIXIE GW' into El campo donde se realiza la busque del producto (completed)" width="1600"/>
+                <img src="e1b255a454d73c55507c2ed8fa20e02e2b4f0be7b9396973f5f081a163c482f3.png" title=" Camilo clicks on " width="1600"/>
+                <img src="6266e369a55085f19bab11b661be192aa9de4ecb46a8844407393df4c9493847.png" title=" Camilo clicks on  (completed)" width="1600"/>
+                <img src="6266e369a55085f19bab11b661be192aa9de4ecb46a8844407393df4c9493847.png" title=" Camilo clicks on " width="1600"/>
+                <img src="6266e369a55085f19bab11b661be192aa9de4ecb46a8844407393df4c9493847.png" title=" Camilo clicks on  (completed)" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" When busco un producto en el buscador
+| nombreProducto |
+| BICICLETA MTB 29 GW JACKAL 9.3 D/B HIDRAULICO 9 VEL. |" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" Camilo buscar producto en gw" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" Camilo enters 'BICICLETA MTB 29 GW JACKAL 9.3 D/B HIDRAULICO 9 VEL.' into El campo donde se realiza la busque del producto" width="1600"/>
+                <img src="ba8d2d124b48b0e9ae34fd0a11f1f3b8d598b6f0218d4b8861038517db89dbe0.png" title=" Camilo enters 'BICICLETA MTB 29 GW JACKAL 9.3 D/B HIDRAULICO 9 VEL.' into El campo donde se realiza la busque del producto (completed)" width="1600"/>
+                <img src="ba8d2d124b48b0e9ae34fd0a11f1f3b8d598b6f0218d4b8861038517db89dbe0.png" title=" Camilo clicks on " width="1600"/>
+                <img src="9e197a6dc6543070dddcceaa8a12d9e1aefab0dc1fb26d3555dde697e153bf03.png" title=" Camilo clicks on  (completed)" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" When busco un producto en el buscador
+| nombreProducto |
+| BICICLETA 700C GW LUMEN 9VEL. |" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" Camilo buscar producto en gw" width="1600"/>
+                <img src="ad45efc7251e116fb4e8a927205022334dcf24ea1be0e984000fa5881cdf780b.png" title=" Camilo enters 'BICICLETA 700C GW LUMEN 9VEL.' into El campo donde se realiza la busque del producto" width="1600"/>
+                <img src="d097db5fe0a3ba6a9ae57a47e10e84be08c7e38c3249d8a95f65ab015bceb14f.png" title=" Camilo enters 'BICICLETA 700C GW LUMEN 9VEL.' into El campo donde se realiza la busque del producto (completed)" width="1600"/>
+                <img src="d097db5fe0a3ba6a9ae57a47e10e84be08c7e38c3249d8a95f65ab015bceb14f.png" title=" Camilo clicks on " width="1600"/>
+                <img src="ac32c37721366f4a1da911d9473ae36d555e42b711498a97bba1329e7ea8ccb6.png" title=" Camilo clicks on  (completed)" width="1600"/>
+                <img src="ac32c37721366f4a1da911d9473ae36d555e42b711498a97bba1329e7ea8ccb6.png" title=" Camilo clicks on " width="1600"/>
+                <img src="ac32c37721366f4a1da911d9473ae36d555e42b711498a97bba1329e7ea8ccb6.png" title=" Camilo clicks on  (completed): <span class='error-color'>ERROR</span>" width="1600"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.0.80</span>
+</div>
+</body>
+</html>

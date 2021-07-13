@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="HU-002 Calendario Google" skipped="0" tests="3" time="81.9" timestamp="2021-07-13 05:57:44"><testcase name="Crear una tarea en el calendario de Google"/><testcase name="Modificar una tarea en el calendario de Google"/><testcase name="Eliminar una tarea en el calendario de Google"/></testsuite>
