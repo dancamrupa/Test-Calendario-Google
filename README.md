@@ -699,7 +699,7 @@ Para descargar este proyecto dar clic en el boton **Code**, luego dar clic en la
 
 Este comando ejecutara todos los escenarios implementados en el proyecto:
 
-` 6 actionable tasks: 6 executed`
+` 7 actionable tasks: 7 executed`
 
 Al finalizar debemos ingresar y abrir el archivo *index.html* que se encuentra en la siguiente ruta
 
