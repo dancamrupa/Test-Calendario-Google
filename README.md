@@ -2,20 +2,23 @@
 
 Este repositorio contiene la automatizacion de la aplicacion Calendario de la suite de Google, el cual, realizara la creacion, modificacion y eliminacion de un evento y una tarea. Este proyecto se realizo con el entorno de desarrollo Intellij IDEA version 2021.1.1, herramienta de compilación como Gradle, framework como SerenityBDD con y patrones de diseño como Screenplay. Se realizaron 5 escenarios automatizados y 3 escenarios manuales.
 
-Estructura Codigo Fuente
+## Estructura Codigo Fuente
 
-| driver  | Contiene el driver del navegador  |
-| interactions  | Contiene todas las interaciones que se ejecutaran en la automatizacion  |
-| models  |  Contiene todos los modelos que se utilizaran para la construccion de la automatizacion |
-| tasks | Contiene todas las tareas que se ejecutaran en la automatizacion  |
-| userInterface  | Contiene todos los elementos de la interface usuario mapeados en la pagina |
-| Runners  | Contiene todos los ejecutores de las pruebas automatizadas  |
-| Steps Definitions  | Contiene todos los pasos de la ejecucion de cada prueba automatizada  |
-| Features  | Contiene todos los esenarios codificados en lenguaje Gherking |
+| 			 | 											  |
+| ----- 		 | ---- 										  |
+| **Driver**    	 | Contiene el driver del navegador 							  |
+| **Interactions**       | Contiene todas las interaciones que se ejecutaran en la automatizacion 	 	  |
+| **Models**             | Contiene todos los modelos que se utilizaran para la construccion de la automatizacion |
+| **Tasks**              | Contiene todas las tareas que se ejecutaran en la automatizacion			  |
+| **UserInterface**      | Contiene todos los elementos de la interface usuario mapeados en la pagina 		  |
+| **Runners**            | Contiene todos los ejecutores de las pruebas automatizadas 				  |
+| **Steps Definitions**  | Contiene todos los pasos de la ejecucion de cada prueba automatizada 		  |
+| **Features**           | Contiene todos los esenarios codificados en lenguaje Gherking 			  |
 
-Drivers
 
-SeleniumWebDriver
+## Drivers
+
+### SeleniumWebDriver
 
 Esta clase contiene el lanzador del navegador a utilizar para la automatizacion, se inicializa una variable WebDriver quien es utilizada en el metodo para levantar el navegador y asignarle la url.
 
@@ -47,9 +50,9 @@ Esta clase contiene el lanzador del navegador a utilizar para la automatizacion,
 	    }
 	}
   
-Interactions
+## Interactions
 
-Espera
+### Espera
 
 Realiza la espera implicita, esta tarea implementa la interfaz Interaction y sobreescribe su metodo, tambien recibe un parametro de tipo int.
 
@@ -80,9 +83,9 @@ Realiza la espera implicita, esta tarea implementa la interfaz Interaction y sob
 		}
 	}
 
-Models
+## Models
 
-Persona
+### Persona
 
 Esta clase crea un objeto de tipo persona que contiene dos variables de tipo string, el constructor y los getter y setter correspondiente a cada variable.
 
@@ -108,9 +111,9 @@ Esta clase crea un objeto de tipo persona que contiene dos variables de tipo str
 		}
 	}
   
-Task
+## Task
 
-CrearEvento
+### CrearEvento
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una fecha en el calendario y crea un evento.
 
@@ -157,7 +160,7 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 
 	}
   
-ModificarEvento
+### ModificarEvento
   
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona un evento ya creado en el calendario y modifica este evento ingresando una nueva informacion.
 
@@ -213,7 +216,7 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 		}
 	}
 
-EliminarEvento
+### EliminarEvento
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona un evento ya creado en el calendario y lo elimina.
 
@@ -258,7 +261,7 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 		}
 	}
   
-CrearTarea
+### CrearTarea
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una fecha en el calendario y crea una tarea.
 
@@ -304,7 +307,7 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 
 	}
 
-ModificarTarea
+### ModificarTarea
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una tarea ya creada en el calendario y la modifica ingresando una nueva informacion.
 
@@ -357,7 +360,7 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 
 	}
   
-EliminarTarea
+### EliminarTarea
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una tarea ya creada en el calendario y la elimina.
 
@@ -403,9 +406,9 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 
 	}
   
-UserInterface
+## UserInterface
 
-CalendarioUserInterface
+### CalendarioUserInterface
 
 Esta clase contiene todos los mapeos de los elementos de la aplicacion Calendario de Google, el cual, se utilizan para realizar las difetentes interacciones.
 
@@ -459,9 +462,9 @@ Esta clase contiene todos los mapeos de los elementos de la aplicacion Calendari
 
 	}
   
-Runners
+## Runners
 
-EventoRunner
+### EventoRunner
 
 Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busca los metodos correspondientes en el paquete de **stepDefinitios** para realizar la ejecucion que es crear, modificar y eliminar un evento. Esta clase corre mediante el **@RunWith** de la clase *CucumberWithSerenity.class* y mediante el **@CucumberOptions** llama al feature correspondiente, el paquete que contiene los **Steps Definitions** y el **CamelCase**.
 
@@ -482,7 +485,7 @@ Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busc
 	public class EventoRunner {
 	}
   
-TareaRunner
+### TareaRunner
 
 Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busca los metodos correspondientes en el paquete de **stepDefinitios** para realizar la ejecucion que es crear, modificar y eliminar una tarea. Esta clase corre mediante el **@RunWith** de la clase *CucumberWithSerenity.class* y mediante el **@CucumberOptions** llama al feature correspondiente, el paquete que contiene los **Steps Definitions** y el **CamelCase**.
 
@@ -503,12 +506,12 @@ Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busc
 	public class TareaRunner {
 	}
   
-StepDefinitions
+## StepDefinitions
 
 Los steps definitions contienen todos los metodos llamados mediante el **Runner** al
 **Feature**. Los metodos ejecutan las **tasks,interactions** y **questions** mediante un *actor*.
 
-EventoStepDefinitions
+### EventoStepDefinitions
 
 Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar un evento, este llama a las tareas *CrearEvento*, *ModifcarEvento* y *EliminarEvento*. 
 
@@ -565,7 +568,7 @@ Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar un 
 		}
 	}
   
-TareaStepDefinitions
+### TareaStepDefinitions
 
 Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar una tarea, este llama a las tareas *CrearTarea*, *ModifcarTarea* y *EliminarTarea*. 
 
@@ -623,9 +626,9 @@ Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar una
 		}
 	}
   
-Features
+## Features
 
-Evento.feature
+### Evento.feature
 
 Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar un evento. Los datos a utilizar en cada escenario estan digitados en lenguaje Gherking. 
 
@@ -655,7 +658,7 @@ Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar un ev
 			  |estoessolounaprueba3@gmail.com |Pru3ba2021 |
 			Then no podre ver el evento en pantalla
 	
-Tarea.feature
+### Tarea.feature
 
 Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar una tarea. Los datos a utilizar en cada escenario estan digitados en lenguaje Gherking. 
 
@@ -685,7 +688,7 @@ Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar una t
 			  |estoessolounaprueba3@gmail.com |Pru3ba2021 |
 			Then no podre ver la tarea en pantalla
 	
-Ejecucion
+## Ejecucion
 
 Al momento de ejecutar el proyecto y obtener el reporte debemos ubicarnos en la carpeta del proyecto y abrir el CMD para ejecutar el siguiente comando:
 
