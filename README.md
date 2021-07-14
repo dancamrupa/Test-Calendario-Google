@@ -1,6 +1,6 @@
 # Introduccion
 
-Este repositorio contiene la automatizacion de la aplicacion Calendario de la suite de Google, el cual, realizara la creacion, modificacion y eliminacion de un evento y una tarea. Este proyecto se realizo con el entorno de desarrollo Intellij IDEA version 2021.1.1, herramienta de compilación como Gradle, framework como SerenityBDD con y patrones de diseño como Screenplay. Se realizaron 5 escenarios automatizados y 3 escenarios manuales.
+Este repositorio contiene la automatización de la aplicación *Calendario de la suite de Google*. Este proyecto se realizó con el entorno de desarrollo **Intellij IDEA versión 2021.1.1**, herramientas de compilación como **Gradle**, frameworks como **SerenityBDD**, patrones de diseño como **Screenplay**, herramientas de prueba como **Cucumber**. Se realizaron 6 escenarios automatizados, el cual, realizaran la *creación, modificación y eliminación* de un **evento** y una **tarea** en el *calendario de Google*, y 3 escenarios manuales que guiaran a la ejecución de la *creación, modificación y eliminación* de un **recordatorio** en el *calendario de Google*.
 
 ## Estructura Codigo Fuente
 
@@ -506,6 +506,27 @@ Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busc
 	public class TareaRunner {
 	}
   
+### RecordatorioRunner
+
+Su funcion es llamar los pasos asignados en el feature **Recordatorio.feature** y busca los metodos correspondientes en el paquete de **stepDefinitios** para realizar la ejecucion que es crear, modificar y eliminar un recordatorio. Esta clase corre mediante el **@RunWith** de la clase *CucumberWithSerenity.class* y mediante el **@CucumberOptions** llama al feature correspondiente, el paquete que contiene los **Steps Definitions** y el **CamelCase**.
+
+	package runners;
+
+	import cucumber.api.SnippetType;
+	import org.junit.runner.RunWith;
+	import cucumber.api.CucumberOptions;
+	import net.serenitybdd.cucumber.CucumberWithSerenity;
+
+	@RunWith(CucumberWithSerenity.class)
+	@CucumberOptions(
+			features = "src/test/resources/features/Recordatorio.feature",
+			glue = "stepDefinitions",
+			snippets = SnippetType.CAMELCASE
+	)
+
+	public class RecordatorioRunner {
+	}
+
 ## StepDefinitions
 
 Los steps definitions contienen todos los metodos llamados mediante el **Runner** al
@@ -625,6 +646,64 @@ Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar una
 
 		}
 	}
+	
+### RecordatorioStepDefinitions
+
+Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar un recordatorio.
+
+	package stepDefinitions;
+
+	import tasks.*;
+	import models.Persona;
+	import java.util.List;
+	import java.io.IOException;
+	import driver.SeleniumWebDriver;
+	import cucumber.api.java.Before;
+	import cucumber.api.java.en.Given;
+	import cucumber.api.java.en.Then;
+	import cucumber.api.java.en.When;
+	import net.serenitybdd.screenplay.actors.OnStage;
+	import net.serenitybdd.screenplay.actors.OnlineCast;
+	import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+
+
+	public class RecordatorioStepDefinitions {
+
+		@Before
+		public void before() throws IOException {
+			OnStage.setTheStage(new OnlineCast());
+		}
+
+		@Given("^digitar el usuario y password en la pagina de calendario de google con la url (.*)$")
+		public void ingresoElUsuarioYPasswordEnLaPaginaDeCalendarioDeGoogleConLaUrlHttpsCalendarGoogleCom(String url) {
+			OnStage.theActorCalled("Camilo").can(BrowseTheWeb.with(SeleniumWebDriver.ChromeWebDriver().on(url)));
+		}
+
+		@When("^creo un recordatorio en el calendario$")
+		public void creoUnRecordatorioEnElCalendario(List<Persona> personas) {
+
+		}
+
+		@When("^modifico un recordatorio creado$")
+		public void modificoUnRecordatorioCreado(List<Persona> personas) {
+
+		}
+
+		@When("^elimino un recordatorio creado$")
+		public void eliminoUnRecordatorioCreado(List<Persona> personas) {
+
+		}
+
+		@Then("^podre ver el recordatorio en pantalla$")
+		public void podreVerElRecordatorioEnPantalla() {
+
+		}
+
+		@Then("^no podre ver el recordatorio en pantalla$")
+		public void noPodreVerElRecordatorioEnPantalla() {
+
+		}
+	}
   
 ## Features
 
@@ -687,6 +766,39 @@ Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar una t
 			  |username                       |password   |
 			  |estoessolounaprueba3@gmail.com |Pru3ba2021 |
 			Then no podre ver la tarea en pantalla
+			
+### Recordatorio.feature
+
+Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar un recordatorio. Los datos a utilizar en cada escenario estan digitados en lenguaje Gherking. 
+
+		Feature: HU-003 Calendario Google
+			 Yo como usuario de Google
+			 quiero crear, modificar y eliminar un recordatorio
+			 en la pagina del calendario de google
+
+		  Background:
+		    Given digitar el usuario y password en la pagina de calendario de google con la url https://calendar.google.com/
+
+		  @Manual
+		  Scenario: Crear un recordatorio en el calendario de Google
+		    When creo un recordatorio en el calendario
+		      |username                       |password   |
+		      |estoessolounaprueba3@gmail.com |Pru3ba2021 |
+		    Then podre ver el recordatorio en pantalla
+
+		  @Manual
+		  Scenario: Modificar una tarea en el calendario de Google
+		    When modifico un recordatorio creado
+		      |username                       |password   |
+		      |estoessolounaprueba3@gmail.com |Pru3ba2021 |
+		    Then podre ver el recordatorio en pantalla
+
+		  @Manual
+		  Scenario: Eliminar una tarea en el calendario de Google
+		    When elimino un recordatorio creado
+		      |username                       |password   |
+		      |estoessolounaprueba3@gmail.com |Pru3ba2021 |
+		    Then no podre ver el recordatorio en pantalla
 	
 ## Ejecucion
 
