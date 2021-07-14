@@ -693,7 +693,7 @@ Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar una t
 ```	
 ## Ejecucion
 
-Al momento de ejecutar el proyecto y obtener el reporte debemos ubicarnos en la carpeta del proyecto y abrir el CMD para ejecutar el siguiente comando:
+Para descargar este proyecto dar clic en el boton **Code**, luego dar clic en la opción **download ZIP**. Después de descargar la carpeta del proyecto **Test Calendario Google**, dar clic derecho y escoger la opción extraer aqui. Despues abrimos la carpeta **Test Calendario Google** y estando dentro de ella oprimimos la tecla shif y al mismo tiempo damos clic derecho y escogemos la opción que dice *Abrir ventana de comandos aqui*. Luego copiamos y pegamos el siguiente código para realizar la ejecución de los escenarios y generar el reporte del proyecto: 
 
 `gradle clean test aggregate`
 
