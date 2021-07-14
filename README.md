@@ -1,11 +1,11 @@
 # Introduccion
 
-Este repositorio contiene la automatización de la aplicación *Calendario de la suite de Google*. Este proyecto se realizó con el entorno de desarrollo **Intellij IDEA versión 2021.1.1**, herramientas de compilación como **Gradle**, frameworks como **SerenityBDD**, patrones de diseño como **Screenplay**, herramientas de prueba como **Cucumber**. Se realizaron 6 escenarios automatizados, el cual, realizaran la *creación, modificación y eliminación* de un **evento** y una **tarea** en el *calendario de Google*, y 3 escenarios manuales que guiaran a la ejecución de la *creación, modificación y eliminación* de un **recordatorio** en el *calendario de Google*.
+Este repositorio contiene la automatización de la aplicación *Calendario de la suite de Google*. Este proyecto se realizó con el entorno de desarrollo **Intellij IDEA versión 2021.1.1**, herramientas de compilación como **Gradle**, frameworks como **SerenityBDD**, patrones de diseño como **Screenplay**, herramientas de prueba como **Cucumber**. Se realizaron 6 escenarios automatizados, el cual, realizaran la *creación, modificación y eliminación* de un **evento** y una **tarea** en el *calendario de Google*, y 3 escenarios manuales que guiaran a la ejecución de la *creación, modificación y eliminación* de un **recordatorio** en el *calendario de Google*. Al final de este **README** encontrará los pasos para la ejecución de este código.
 
 ## Estructura Codigo Fuente
 
 | 			 | 											  |
-| ----- 		 | ---- 										  |
+| :-----: 		 | :----: 										  |
 | **Driver**    	 | Contiene el driver del navegador 							  |
 | **Interactions**       | Contiene todas las interaciones que se ejecutaran en la automatizacion 	 	  |
 | **Models**             | Contiene todos los modelos que se utilizaran para la construccion de la automatizacion |
@@ -21,7 +21,7 @@ Este repositorio contiene la automatización de la aplicación *Calendario de la
 ### SeleniumWebDriver
 
 Esta clase contiene el lanzador del navegador a utilizar para la automatizacion, se inicializa una variable WebDriver quien es utilizada en el metodo para levantar el navegador y asignarle la url.
-
+```ruby
 	package driver;
 	
 	import org.openqa.selenium.WebDriver;
@@ -49,13 +49,14 @@ Esta clase contiene el lanzador del navegador a utilizar para la automatizacion,
 			return driver;
 	    }
 	}
-  
+	
+```  
 ## Interactions
 
 ### Espera
 
 Realiza la espera implicita, esta tarea implementa la interfaz Interaction y sobreescribe su metodo, tambien recibe un parametro de tipo int.
-
+```ruby
 	package interactions;
 
 	import driver.SeleniumWebDriver;
@@ -82,13 +83,13 @@ Realiza la espera implicita, esta tarea implementa la interfaz Interaction y sob
 			return Instrumented.instanceOf(Esperar.class).withProperties(seconds);
 		}
 	}
-
+```
 ## Models
 
 ### Persona
 
 Esta clase crea un objeto de tipo persona que contiene dos variables de tipo string, el constructor y los getter y setter correspondiente a cada variable.
-
+```ruby
 	package models;
 
 	public class Persona {
@@ -110,13 +111,13 @@ Esta clase crea un objeto de tipo persona que contiene dos variables de tipo str
 			this.password = password;
 		}
 	}
-  
+```  
 ## Task
 
 ### CrearEvento
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una fecha en el calendario y crea un evento.
-
+```ruby
 	package tasks;
 
 	import interactions.Esperar;
@@ -159,12 +160,12 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 		}
 
 	}
-  
+```  
 ### ModificarEvento
   
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona un evento ya creado en el calendario y modifica este evento ingresando una nueva informacion.
 
-
+```ruby
 	package tasks;
 
 	import interactions.Esperar;
@@ -215,11 +216,11 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 			return Instrumented.instanceOf(ModificarEvento.class).withProperties(usuario, password);
 		}
 	}
-
+```
 ### EliminarEvento
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona un evento ya creado en el calendario y lo elimina.
-
+```ruby
 	package tasks;
 
 	import interactions.Esperar;
@@ -260,11 +261,11 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 			return Instrumented.instanceOf(EliminarEvento.class).withProperties(usuario, password);
 		}
 	}
-  
+```  
 ### CrearTarea
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una fecha en el calendario y crea una tarea.
-
+```ruby
 	package tasks;
 
 	import interactions.Esperar;
@@ -306,11 +307,11 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 		}
 
 	}
-
+```
 ### ModificarTarea
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una tarea ya creada en el calendario y la modifica ingresando una nueva informacion.
-
+```ruby
 	package tasks;
 
 	import interactions.Esperar;
@@ -359,11 +360,11 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 		}
 
 	}
-  
+```  
 ### EliminarTarea
 
 Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea selecciona una tarea ya creada en el calendario y la elimina.
-
+```ruby
 	package tasks;
 
 	import interactions.Esperar;
@@ -405,13 +406,13 @@ Realiza el inicio de sesion en la pagina del Calendario de Google. Esta tarea se
 		}
 
 	}
-  
+```  
 ## UserInterface
 
 ### CalendarioUserInterface
 
 Esta clase contiene todos los mapeos de los elementos de la aplicacion Calendario de Google, el cual, se utilizan para realizar las difetentes interacciones.
-
+```ruby
 	package userInterface;
 
 	import net.serenitybdd.screenplay.targets.Target;
@@ -461,13 +462,13 @@ Esta clase contiene todos los mapeos de los elementos de la aplicacion Calendari
 		public static final Target BTN_ELIMINAR_TAREA = Target.the("").locatedBy("//div[@aria-label = 'Eliminar tarea']");
 
 	}
-  
+```  
 ## Runners
 
 ### EventoRunner
 
 Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busca los metodos correspondientes en el paquete de **stepDefinitios** para realizar la ejecucion que es crear, modificar y eliminar un evento. Esta clase corre mediante el **@RunWith** de la clase *CucumberWithSerenity.class* y mediante el **@CucumberOptions** llama al feature correspondiente, el paquete que contiene los **Steps Definitions** y el **CamelCase**.
-
+```ruby
 	package runners;
 
 	import cucumber.api.SnippetType;
@@ -484,11 +485,11 @@ Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busc
 
 	public class EventoRunner {
 	}
-  
+```  
 ### TareaRunner
 
 Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busca los metodos correspondientes en el paquete de **stepDefinitios** para realizar la ejecucion que es crear, modificar y eliminar una tarea. Esta clase corre mediante el **@RunWith** de la clase *CucumberWithSerenity.class* y mediante el **@CucumberOptions** llama al feature correspondiente, el paquete que contiene los **Steps Definitions** y el **CamelCase**.
-
+```ruby
 	package runners;
 
 	import cucumber.api.SnippetType;
@@ -505,28 +506,7 @@ Su funcion es llamar los pasos asignados en el feature **Evento.feature** y busc
 
 	public class TareaRunner {
 	}
-  
-### RecordatorioRunner
-
-Su funcion es llamar los pasos asignados en el feature **Recordatorio.feature** y busca los metodos correspondientes en el paquete de **stepDefinitios** para realizar la ejecucion que es crear, modificar y eliminar un recordatorio. Esta clase corre mediante el **@RunWith** de la clase *CucumberWithSerenity.class* y mediante el **@CucumberOptions** llama al feature correspondiente, el paquete que contiene los **Steps Definitions** y el **CamelCase**.
-
-	package runners;
-
-	import cucumber.api.SnippetType;
-	import org.junit.runner.RunWith;
-	import cucumber.api.CucumberOptions;
-	import net.serenitybdd.cucumber.CucumberWithSerenity;
-
-	@RunWith(CucumberWithSerenity.class)
-	@CucumberOptions(
-			features = "src/test/resources/features/Recordatorio.feature",
-			glue = "stepDefinitions",
-			snippets = SnippetType.CAMELCASE
-	)
-
-	public class RecordatorioRunner {
-	}
-
+```
 ## StepDefinitions
 
 Los steps definitions contienen todos los metodos llamados mediante el **Runner** al
@@ -535,7 +515,7 @@ Los steps definitions contienen todos los metodos llamados mediante el **Runner*
 ### EventoStepDefinitions
 
 Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar un evento, este llama a las tareas *CrearEvento*, *ModifcarEvento* y *EliminarEvento*. 
-
+```ruby
 	package stepDefinitions;
 
 	import tasks.*;
@@ -588,11 +568,11 @@ Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar un 
 		
 		}
 	}
-  
+```  
 ### TareaStepDefinitions
 
 Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar una tarea, este llama a las tareas *CrearTarea*, *ModifcarTarea* y *EliminarTarea*. 
-
+```ruby
 	package stepDefinitions;
 
 	import tasks.*;
@@ -647,70 +627,13 @@ Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar una
 		}
 	}
 	
-### RecordatorioStepDefinitions
-
-Contiene todos los paso a paso de la ejecucion de crear, modifica y eliminar un recordatorio.
-
-	package stepDefinitions;
-
-	import tasks.*;
-	import models.Persona;
-	import java.util.List;
-	import java.io.IOException;
-	import driver.SeleniumWebDriver;
-	import cucumber.api.java.Before;
-	import cucumber.api.java.en.Given;
-	import cucumber.api.java.en.Then;
-	import cucumber.api.java.en.When;
-	import net.serenitybdd.screenplay.actors.OnStage;
-	import net.serenitybdd.screenplay.actors.OnlineCast;
-	import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-
-
-	public class RecordatorioStepDefinitions {
-
-		@Before
-		public void before() throws IOException {
-			OnStage.setTheStage(new OnlineCast());
-		}
-
-		@Given("^digitar el usuario y password en la pagina de calendario de google con la url (.*)$")
-		public void ingresoElUsuarioYPasswordEnLaPaginaDeCalendarioDeGoogleConLaUrlHttpsCalendarGoogleCom(String url) {
-			OnStage.theActorCalled("Camilo").can(BrowseTheWeb.with(SeleniumWebDriver.ChromeWebDriver().on(url)));
-		}
-
-		@When("^creo un recordatorio en el calendario$")
-		public void creoUnRecordatorioEnElCalendario(List<Persona> personas) {
-
-		}
-
-		@When("^modifico un recordatorio creado$")
-		public void modificoUnRecordatorioCreado(List<Persona> personas) {
-
-		}
-
-		@When("^elimino un recordatorio creado$")
-		public void eliminoUnRecordatorioCreado(List<Persona> personas) {
-
-		}
-
-		@Then("^podre ver el recordatorio en pantalla$")
-		public void podreVerElRecordatorioEnPantalla() {
-
-		}
-
-		@Then("^no podre ver el recordatorio en pantalla$")
-		public void noPodreVerElRecordatorioEnPantalla() {
-
-		}
-	}
-  
+```
 ## Features
 
 ### Evento.feature
 
 Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar un evento. Los datos a utilizar en cada escenario estan digitados en lenguaje Gherking. 
-
+```ruby
 	Feature: HU-001 Calendario Google
 			 	 Yo como usuario de Google
 				  quiero crear, modificar y eliminar un evento
@@ -736,11 +659,11 @@ Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar un ev
 			  |username                       |password   |
 			  |estoessolounaprueba3@gmail.com |Pru3ba2021 |
 			Then no podre ver el evento en pantalla
-	
+```	
 ### Tarea.feature
 
 Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar una tarea. Los datos a utilizar en cada escenario estan digitados en lenguaje Gherking. 
-
+```ruby
 	Feature: HU-002 Calendario Google
 			      Yo como usuario de Google
 			     quiero crear, modificar y eliminar una tarea
@@ -767,39 +690,7 @@ Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar una t
 			  |estoessolounaprueba3@gmail.com |Pru3ba2021 |
 			Then no podre ver la tarea en pantalla
 			
-### Recordatorio.feature
-
-Contiene los escenarios exitosos y alternos de Crear, modificar y eliminar un recordatorio. Los datos a utilizar en cada escenario estan digitados en lenguaje Gherking. 
-
-		Feature: HU-003 Calendario Google
-			 Yo como usuario de Google
-			 quiero crear, modificar y eliminar un recordatorio
-			 en la pagina del calendario de google
-
-		  Background:
-		    Given digitar el usuario y password en la pagina de calendario de google con la url https://calendar.google.com/
-
-		  @Manual
-		  Scenario: Crear un recordatorio en el calendario de Google
-		    When creo un recordatorio en el calendario
-		      |username                       |password   |
-		      |estoessolounaprueba3@gmail.com |Pru3ba2021 |
-		    Then podre ver el recordatorio en pantalla
-
-		  @Manual
-		  Scenario: Modificar una tarea en el calendario de Google
-		    When modifico un recordatorio creado
-		      |username                       |password   |
-		      |estoessolounaprueba3@gmail.com |Pru3ba2021 |
-		    Then podre ver el recordatorio en pantalla
-
-		  @Manual
-		  Scenario: Eliminar una tarea en el calendario de Google
-		    When elimino un recordatorio creado
-		      |username                       |password   |
-		      |estoessolounaprueba3@gmail.com |Pru3ba2021 |
-		    Then no podre ver el recordatorio en pantalla
-	
+```	
 ## Ejecucion
 
 Al momento de ejecutar el proyecto y obtener el reporte debemos ubicarnos en la carpeta del proyecto y abrir el CMD para ejecutar el siguiente comando:
