@@ -1,6 +1,6 @@
 # Introduccion
 
-Este repositorio contiene la automatización de la aplicación *Calendario de la suite de Google*. Este proyecto se realizó con el entorno de desarrollo **Intellij IDEA versión 2021.1.1**, herramientas de compilación como **Gradle**, frameworks como **SerenityBDD**, patrones de diseño como **Screenplay**, herramientas de prueba como **Cucumber**. Se realizaron 6 escenarios automatizados, el cual, realizaran la *creación, modificación y eliminación* de un **evento** y una **tarea** en el *calendario de Google*, y 3 escenarios manuales que guiaran a la ejecución de la *creación, modificación y eliminación* de un **recordatorio** en el *calendario de Google*. Al final de este **README** encontrará los pasos para la ejecución de este código.
+Este repositorio contiene la automatización de la aplicación *Calendario de la suite de Google*. Este proyecto se realizó con el entorno de desarrollo **Intellij IDEA versión 2021.1.1**, herramientas de compilación como **Gradle**, frameworks como **SerenityBDD**, patrones de diseño como **Screenplay**, herramientas de prueba como **Cucumber**. Se realizaron 6 escenarios automatizados, el cual, realizaran la *creación, modificación y eliminación* de un **evento** y una **tarea** en el *calendario de Google*, y 3 escenarios manuales que guiaran a la ejecución de la *creación, modificación y eliminación* de un **recordatorio** en el *calendario de Google*. Al final de este **README** encontrará los pasos para la descarga y ejecución de este proyecto.
 
 ## Estructura Codigo Fuente
 
