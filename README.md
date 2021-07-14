@@ -705,6 +705,7 @@ Al finalizar debemos ingresar y abrir el archivo *index.html* que se encuentra e
 
 `Test Calendario Google\target\site\serenity.index.html`
 
+Para descargar el archivo con las pruebas manuales, buscar en la lista del protecto **Test Calendario Google** el archivo *Pruebas Manuales - Calendario Google* y le da clic, luego le da clic en el boton *Download* y despues abrir el archivo *Pruebas Manuales - Calendario Google.xls*. Allí encontrará 3 escenarios para ejecutarlos de manera manual.
 
 
 
